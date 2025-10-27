@@ -1,5 +1,5 @@
 {
-  "name": "polyfill-library",
+  "name": "@lincy/polyfill-library",
   "version": "4.8.0",
   "description": "A polyfill combinator",
   "main": "lib/index.js",
@@ -36,7 +36,7 @@
     "test-node": "nyc mocha test/node/**/*.js",
     "test-node-unit": "mocha test/unit --recursive",
     "test": "npm run build && npm run test-node && npm run test-node-unit && npm run test-polyfills",
-    "prepublishOnly": "npm run build && mv polyfills/__dist __dist && rimraf polyfills && mkdir polyfills && mv __dist polyfills/__dist",
+    "prepublishOnly": "npm run build",
     "create-new-polyfill": "node ./tasks/create-new-polyfill.js",
     "update-browserstack-list": "node ./tasks/updatebrowserstacklist.js",
     "version": "auto-changelog -p"
@@ -125,6 +125,9 @@
     "web-animations-js": "^2.2.5",
     "webdriverio": "^8.0.0",
     "whatwg-fetch": "^3.6.2"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "volta": {
     "node": "16.20.0"
